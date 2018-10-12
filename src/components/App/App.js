@@ -25,30 +25,34 @@ class App extends Component {
     })
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
   }
 
   render() {
     return (
-      <div>
-        <h1>Contact List App</h1>
-        <AddContactForm addContactFunction={this.addContact}/>
-        <div>
-          <h3>Contact List</h3>
-          {
-            this.state.contacts.map(
-              contact => (
-                <div key={contact.id} className = 'contactItem'>
-                  <p>{`Name: ${contact.name}`}</p>
-                  <p>{`Surname: ${contact.surname}`}</p> 
-                  <button onClick={() => this.removeContact(contact.id)}>Remove this contact</button>
-                </div>
-              )
-            )
-          }
-        </div>
+      <div className='main-container'>
+        <h1 className='main-header'>Contact List App</h1>
+        <AddContactForm addContactFunction={this.addContact} />
+        <div className='contact-list-container'>
+          <h3 className='contact-list-header'>Contact List</h3>
+          <div className='contact-list'>
+            {
+              this.state.contacts.map(
+                contact => (
+                  <div key={contact.id} className='contact-item'>
+                    <div className='contact-item-data'>
+                      <p>{`Name: ${contact.name}`}</p>
+                      <p>{`Surname: ${contact.surname}`}</p>
+                    </div>
 
+                    <button className='contact-item-button' onClick={() => this.removeContact(contact.id)}>Remove this contact</button>
+                  </div>
+                )
+              )
+            }
+          </div>
+        </div>
       </div>
     );
   }

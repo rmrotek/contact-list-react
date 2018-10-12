@@ -1,0 +1,27 @@
+.main-header {
+  line-height: 2em;
+  letter-spacing: 0.2em
+}
+
+.main-container {
+  box-shadow: 0 10px 50px black;
+  margin: 0 1%;
+}
+
+.contact-list-container {
+  padding: 5%;
+}
+
+.contact-list-header {
+  border-bottom: 2px dotted black;
+}
+
+.contact-item-data {
+  text-align: left;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

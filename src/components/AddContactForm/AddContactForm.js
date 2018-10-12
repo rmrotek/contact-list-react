@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddContactForm.css'
 
 
 class AddContactForm extends Component {
@@ -36,20 +37,26 @@ class AddContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.preventSubmit}>
-        <p>
-          <input placeholder='Enter name here' value={this.state.contactName} onChange={this.handleNameChange} />
+      <div className='form-container'>
+        <form onSubmit={this.preventSubmit} >
+          <p className='form-error'>
+            {
+              this.state.error && <span>{this.state.error.message}</span>
+            }
+          </p>
+          <p>
+            <input placeholder='Enter name here' value={this.state.contactName} onChange={this.handleNameChange} />
 
-        </p>
-        <p>
-          <input placeholder='Enter surname here' value={this.state.contactSurname} onChange={this.handleSurnameChange} />
+          </p>
+          <p>
+            <input placeholder='Enter surname here' value={this.state.contactSurname} onChange={this.handleSurnameChange} />
 
-        </p>
-        <button>ADD</button>
-        {
-          this.state.error && <span>{this.state.error.message}</span>
-        }
-      </form>
+          </p>
+          <button>ADD</button>
+
+
+        </form>
+      </div>
     )
   }
 }
