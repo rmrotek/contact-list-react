@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 
 class AddContactForm extends Component {
 
+  state = {
+    contactName:'',
+    contactSurname:''
+  }
+  
   handleSubmit = event => {
     event.preventDefault()
   }
