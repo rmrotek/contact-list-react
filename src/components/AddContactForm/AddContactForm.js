@@ -19,7 +19,7 @@ class AddContactForm extends Component {
       return;
     }
     this.props.addContactFunction(this.state.contactName, this.state.contactSurname);
-    this.setState({ contactName: '', contactSurname: '', error: null});
+    this.setState({ contactName: '', contactSurname: '', error: null });
   }
 
   handleNameChange = event => {
@@ -37,12 +37,12 @@ class AddContactForm extends Component {
   render() {
     return (
       <form onSubmit={this.preventSubmit}>
-        <p>Name
-        <input value={this.state.contactName} onChange={this.handleNameChange} />
+        <p>
+          <input placeholder='Enter name here' value={this.state.contactName} onChange={this.handleNameChange} />
 
         </p>
-        <p>Surname
-        <input value={this.state.contactSurname} onChange={this.handleSurnameChange} />
+        <p>
+          <input placeholder='Enter surname here' value={this.state.contactSurname} onChange={this.handleSurnameChange} />
 
         </p>
         <button>ADD</button>
