@@ -35,7 +35,7 @@ class AddContactForm extends Component {
   }
 
   handleSurnameChange = event => {
-    if(event.target.value.match(/^[A-Za-z]+$/)) {
+    if(event.target.value.match(/^[a-ząśżźćęółń]+$/i)) {
       this.setState({
         contactSurname: event.target.value
       })
