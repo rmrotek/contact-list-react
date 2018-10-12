@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddContactForm from '../AddContactForm/AddContactForm';
 import './App.css';
 
 class App extends Component {
@@ -37,16 +38,22 @@ class App extends Component {
   render() {
     return (
       <div>
-        {
-          this.state.contacts.map(
-            contact => (
-              <div key={contact.id}>
-                {contact.name} {contact.surname}
-                <button onClick={()=> this.removeContact(contact.id)}>Remove</button>
-              </div>
+        <h1>Contact List App</h1>
+        <AddContactForm />
+        <div>
+          <h3>Contact List</h3>
+          {
+            this.state.contacts.map(
+              contact => (
+                <div key={contact.id}>
+                  {contact.name} {contact.surname}
+                  <button onClick={() => this.removeContact(contact.id)}>Remove</button>
+                </div>
+              )
             )
-          )
-        }
+          }
+        </div>
+
       </div>
     );
   }
