@@ -27,6 +27,16 @@ class App extends Component {
       ]
   }
 
+  addContact = (name, surname) => {
+    this.setState({
+      contacts: this.state.contacts.concat({
+        id: Date.now(),
+        name: name,
+        surname: surname
+      })
+    })
+  }
+
   removeContact = contactId => {
     this.setState({
       contacts: this.state.contacts.filter(
@@ -39,7 +49,7 @@ class App extends Component {
     return (
       <div>
         <h1>Contact List App</h1>
-        <AddContactForm />
+        <AddContactForm addContactFunction={this.addContact}/>
         <div>
           <h3>Contact List</h3>
           {

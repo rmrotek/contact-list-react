@@ -18,7 +18,8 @@ class AddContactForm extends Component {
       })
       return;
     }
-    this.setState({ contactName: '', contactSurname: '', error: null})
+    this.props.addContactFunction(this.state.contactName, this.state.contactSurname);
+    this.setState({ contactName: '', contactSurname: '', error: null});
   }
 
   handleNameChange = event => {
