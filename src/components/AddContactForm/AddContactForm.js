@@ -12,12 +12,13 @@ class AddContactForm extends Component {
 
   preventSubmit = event => {
     event.preventDefault();
-    if (this.state.contactName === '' || this.state.contactSurame === '') {
+    if (this.state.contactName === '' || this.state.contactSurname === '') {
       this.setState({
         error: new Error('Fields cant be empty')
       })
       return;
     }
+    this.setState({ contactName: '', contactSurname: '', error: null})
   }
 
   handleNameChange = event => {
