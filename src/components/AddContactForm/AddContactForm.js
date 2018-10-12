@@ -24,15 +24,26 @@ class AddContactForm extends Component {
   }
 
   handleNameChange = event => {
-    this.setState({
-      contactName: event.target.value
-    })
+    if(event.target.value.match(/^[A-Za-z]+$/)) {
+      this.setState({
+        contactName: event.target.value
+      })
+    } else {
+      return this.setState({error: new Error('Can only enter letters')})
+    }
+    
   }
 
   handleSurnameChange = event => {
-    this.setState({
-      contactSurname: event.target.value
-    })
+    if(event.target.value.match(/^[A-Za-z]+$/)) {
+      this.setState({
+        contactSurname: event.target.value
+      })
+    } else {
+      return this.setState({error: new Error('Can only enter letters')})
+    }
+
+    
   }
 
   render() {
@@ -45,7 +56,7 @@ class AddContactForm extends Component {
             }
           </p>
           <p>
-            <input placeholder='Enter name here' value={this.state.contactName} onChange={this.handleNameChange} />
+            <input type='text' placeholder='Enter name here' value={this.state.contactName} onChange={this.handleNameChange} />
 
           </p>
           <p>

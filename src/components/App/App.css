@@ -16,6 +16,11 @@
   border-bottom: 2px dotted black;
 }
 
+.contact-item {
+  background: lightgray;
+  margin-bottom: 5%
+}
+
 .contact-item-data {
   text-align: left;
 }
