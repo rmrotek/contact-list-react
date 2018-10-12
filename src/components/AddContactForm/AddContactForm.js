@@ -10,7 +10,16 @@ class AddContactForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <p>Name
         <input />
+
+        </p>
+        <p>Surname
+        <input />
+
+        </p>
+
+
         <button>ADD</button>
       </form>
     )
