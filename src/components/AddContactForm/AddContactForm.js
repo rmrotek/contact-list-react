@@ -12,15 +12,27 @@ class AddContactForm extends Component {
     event.preventDefault()
   }
 
+  handleNameChange= event => {
+    this.setState({
+      contactName: event.target.value
+    })
+  }
+
+  handleSurnameChange= event => {
+    this.setState({
+      contactSurname: event.target.value
+    })
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <p>Name
-        <input />
+        <input value={this.state.contactName} onChange={this.handleNameChange}/>
 
         </p>
         <p>Surname
-        <input />
+        <input value={this.state.contactSurname} onChange={this.handleSurnameChange}/>
 
         </p>
 
