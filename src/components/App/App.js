@@ -39,9 +39,10 @@ class App extends Component {
           {
             this.state.contacts.map(
               contact => (
-                <div key={contact.id}>
-                  {contact.name} {contact.surname}
-                  <button onClick={() => this.removeContact(contact.id)}>Remove</button>
+                <div key={contact.id} className = 'contactItem'>
+                  <p>{`Name: ${contact.name}`}</p>
+                  <p>{`Surname: ${contact.surname}`}</p> 
+                  <button onClick={() => this.removeContact(contact.id)}>Remove this contact</button>
                 </div>
               )
             )
