@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 
 
 class AddContactForm extends Component {
-  render(){
+
+  handleSubmit = event => {
+    event.preventDefault()
+  }
+
+  render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input />
         <button>ADD</button>
       </form>
