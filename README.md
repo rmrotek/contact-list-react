@@ -1,5 +1,9 @@
 # contact-list-react
-Contact List in React
+### Contact List in React.
+
+### Uses local storage to preserve the list.
+
+### ---------------------------------------------------------------- ###
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
