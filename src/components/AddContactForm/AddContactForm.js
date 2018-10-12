@@ -5,11 +5,15 @@ class AddContactForm extends Component {
 
   state = {
     contactName:'',
-    contactSurname:''
+    contactSurname:'',
+    needNameError: null,
+    needSurnameError: null
+
   }
   
-  handleSubmit = event => {
-    event.preventDefault()
+  preventSubmit = event => {
+    event.preventDefault();
+    
   }
 
   handleNameChange= event => {
@@ -26,7 +30,7 @@ class AddContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.preventSubmit}>
         <p>Name
         <input value={this.state.contactName} onChange={this.handleNameChange}/>
 
